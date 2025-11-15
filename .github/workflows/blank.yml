@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>InatoGel - Bandar Togel Lightning Zeus</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#000;
+  --neon-yellow:#FFB300; /* kuning lampu pijar */
+  --muted:#c9c0a0;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:"Poppins",system-ui,Segoe UI,Roboto;
+  background:var(--bg);
+  color:var(--neon-yellow);
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* ==========================
+       LIGHTNING CANVAS
+=========================== */
+#lightningCanvas{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+  background:var(--bg);
+}
+
+/* ==========================
+       CONTAINER
+=========================== */
+.container{
+  max-width:980px;
+  margin:18px auto;
+  padding:14px;
+  position:relative;
+  z-index:1;
+}
+
+/* PANEL */
+.panel{
+  position:relative;
+  background: rgba(0,0,0,0.6);
+  border-radius:26px;
+  padding:18px;
+  border:1px solid rgba(255,179,0,0.3);
+  box-shadow:0 0 40px rgba(255,179,0,0.3),0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* LOGO FLOATING */
+.logo{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:18px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.logo-img{
+  width:240px;
+  height:auto;
+  animation: neonPulse 1.5s infinite alternate ease-in-out, float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px var(--neon-yellow)) drop-shadow(0 0 30px var(--neon-yellow));
+}
+
+/* KEYFRAMES */
+@keyframes float {0%{transform:translateY(0);}50%{transform:translateY(-10px);}100%{transform:translateY(0);}}
+@keyframes neonPulse {0%{filter: drop-shadow(0 0 8px var(--neon-yellow)) drop-shadow(0 0 16px var(--neon-yellow));transform:scale(1);}100%{filter: drop-shadow(0 0 20px var(--neon-yellow)) drop-shadow(0 0 40px var(--neon-yellow));transform:scale(1.05);}}
+
+/* TEXT ANIMATION */
+.welcome{text-align:center;margin:12px 0 8px;position:relative;z-index:2;}
+.welcome h1{font-size:18px;color:var(--neon-yellow);margin-bottom:8px;font-weight:700;text-shadow:0 0 6px var(--neon-yellow),0 0 12px var(--neon-yellow);animation: flicker 2s infinite;}
+.welcome p{color:var(--muted);font-size:13px;animation: floatText 4s ease-in-out infinite;}
+@keyframes flicker{0%,19%,21%,23%,25%,54%,56%,100%{opacity:1;}20%,22%,24%,55%{opacity:0.3;}}
+@keyframes floatText{0%{transform: translateY(0);}50%{transform: translateY(-4px);}100%{transform: translateY(0);}}
+
+/* PILL & TAG */
+.pill-row{display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin:12px 0; z-index:2;}
+.pill{padding:8px 14px;border-radius:999px;background:transparent;border:1px solid rgba(255,179,0,0.3);color:var(--neon-yellow);font-weight:700;font-size:13px;text-shadow:0 0 4px var(--neon-yellow);animation: pulse 2s infinite alternate;}
+.tag-row{display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin:12px 0; z-index:2;}
+.tag{padding:8px 12px;border-radius:999px;background:rgba(0,0,0,0.35);color:var(--muted);border:1px solid rgba(255,179,0,0.2);font-weight:600;font-size:13px;animation: floatText 4s ease-in-out infinite;}
+
+/* BUTTONS */
+.actions{display:flex; flex-direction:column; gap:12px; margin:18px 6px; z-index:2;}
+.big-btn{display:flex; align-items:center; justify-content:center; gap:12px;padding:16px; border-radius:14px;font-weight:800;font-size:16px;cursor:pointer;border:2px solid rgba(255,179,0,0.3);background:linear-gradient(90deg, rgba(255,179,0,0.1), rgba(255,179,0,0.05));color:var(--neon-yellow);text-decoration:none;box-shadow:0 0 12px var(--neon-yellow),0 0 24px var(--neon-yellow);animation: neonPulseBtn 1.5s infinite alternate;}
+.big-btn.primary{background:linear-gradient(90deg,var(--neon-yellow),var(--neon-yellow));color:#000;box-shadow:0 0 20px var(--neon-yellow),0 0 40px var(--neon-yellow),0 0 60px var(--neon-yellow);}
+@keyframes neonPulseBtn{0%{box-shadow:0 0 12px var(--neon-yellow),0 0 24px var(--neon-yellow);}100%{box-shadow:0 0 20px var(--neon-yellow),0 0 40px var(--neon-yellow);}}
+
+/* BADGE */
+.badge-new{background:#ff4d4d;color:#fff;padding:6px 8px;border-radius:10px;font-size:12px;font-weight:800;margin-left:8px;animation: flicker 1.5s infinite;}
+
+/* HERO BANNER */
+.hero-banner{margin:12px 0;border-radius:14px;overflow:hidden;border:1px solid rgba(255,179,0,0.2);box-shadow:0 0 20px var(--neon-yellow);animation: float 3s ease-in-out infinite;}
+.hero-banner img{width:100%;display:block;height:auto;object-fit:cover;animation: float 3s ease-in-out infinite;}
+
+/* QUICK LINKS */
+.quick-links{display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:18px;}
+.quick-links a{padding:8px 12px;border-radius:999px;background:transparent;border:1px solid rgba(255,179,0,0.2); color:var(--neon-yellow); font-weight:700; font-size:13px;text-shadow:0 0 4px var(--neon-yellow);animation: neonPulseBtn 1.5s infinite alternate;}
+
+/* FOOTER */
+.foot{margin-top:18px;text-align:center;color:var(--muted);font-size:13px;z-index:2;animation: floatText 4s ease-in-out infinite;}
+
+/* FLOAT WA */
+.float-wa{position:fixed; right:18px; bottom:18px; z-index:99;}
+.float-wa a{display:flex; align-items:center; justify-content:center; width:60px;height:60px;border-radius:12px;background:linear-gradient(180deg,#25D366,#1AA859); color:#fff; text-decoration:none; box-shadow:0 0 12px #25D366,0 0 24px #1AA859; font-size:24px; animation: float 3s ease-in-out infinite;}
+
+/* MODAL */
+.modal{position:fixed; inset:0; background:rgba(0,0,0,0.6); display:none; align-items:center; justify-content:center; z-index:200;}
+.modal .box{width:360px;border-radius:12px;padding:18px;background:linear-gradient(180deg,#0b0b0b,#0e0e0e);border:1px solid rgba(255,179,0,0.2);}
+.modal input{width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:none;background:#111;color:var(--neon-yellow);}
+
+@media(max-width:720px){.container{margin:10px;}.logo-img{width:190px;}.welcome h1{font-size:16px;}.big-btn{font-size:15px;padding:14px;}}
+</style>
+</head>
+<body>
+
+<canvas id="lightningCanvas"></canvas>
+
+<div class="container">
+  <div class="panel">
+    <div class="logo">
+      <img src="https://expressina.com/assets/img/aej/logo.png" class="logo-img" alt="Logo Inatogel">
+    </div>
+    <div class="welcome">
+      <h1>Selamat Datang di Inatogel - Bandar Togel Resmi</h1>
+      <p>Dilengkapi • Proses Cepat • Bonus Menarik • Customer Support 24/7</p>
+    </div>
+    <div class="pill-row">
+      <div class="pill">Lengkap</div>
+      <div class="pill">Proses Cepat</div>
+      <div class="pill">Bonus Menarik</div>
+      <div class="pill">Customer 24/7</div>
+    </div>
+    <div class="tag-row">
+      <div class="tag">Togel Sydney</div>
+      <div class="tag">Togel Singapore</div>
+      <div class="tag">Togel Hongkong</div>
+      <div class="tag">BBFS 9D</div>
+      <div class="tag">Angka Tarung 8D</div>
+    </div>
+    <div class="actions">
+      <div class="big-btn" onclick="redirect('https://expressina.com/')">♻️ LOGIN INATOGEL</div>
+      <div class="big-btn primary" onclick="redirect('https://expressina.com/')">💯 DAFTAR INATOGEL <span class="badge-new">NEW</span></div>
+    </div>
+    <div class="hero-banner">
+      <img src="https://images.mirror-media.xyz/publication-images/mmTCr9EcmIkde_oGVXrzq.png?height=800&width=444" alt="banner">
+    </div>
+    <div class="quick-links">
+      <a href="#">Promo</a>
+      <a href="#">Live Chat</a>
+      <a href="#">Cara Main</a>
+      <a href="#">Deposit</a>
+    </div>
+    <div class="foot">© 2025 Inatogel — Semua hak dilindungi • Main bertanggung jawab</div>
+  </div>
+</div>
+
+<div class="float-wa">
+  <a href="https://bit.ly/Whatshapinatoto1" target="_blank">💬</a>
+</div>
+
+<div class="modal" id="modal">
+  <div class="box">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <strong style="color:var(--neon-yellow)">Masuk ke Inatogel</strong>
+      <button onclick="closeModal()" style="background:transparent;border:none;color:#c9c0a0;font-size:18px">✕</button>
+    </div>
+    <input placeholder="Username">
+    <input placeholder="Password" type="password">
+    <button onclick="redirect('https://expressina.com/')" style="width:100%;padding:10px;border-radius:8px;border:none;background:linear-gradient(90deg,var(--neon-yellow),var(--neon-yellow));font-weight:800;color:#000">Masuk</button>
+  </div>
+</div>
+
+<script>
+function redirect(url){ window.location.href = url; }
+function closeModal(){ document.getElementById('modal').style.display='none'; }
+
+/* ==========================
+       ZEUS LIGHTNING SCRIPT (INCANDESCENT YELLOW + BLACK)
+=========================== */
+const canvas = document.getElementById('lightningCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let bolts = [];
+
+function createBolt(x,y,length,thickness){
+  const bolt = {x:x, y:y, segments:[{x:x,y:y}], length:length, thickness:thickness, alpha:1};
+  bolts.push(bolt);
+}
+
+function drawBolt(b){
+  ctx.strokeStyle = `rgba(255,179,0,${b.alpha})`; // kuning lampu pijar
+  ctx.lineWidth = b.thickness;
+  ctx.shadowColor = 'rgba(255,179,0,0.7)';
+  ctx.shadowBlur = 15;
+  ctx.beginPath();
+  ctx.moveTo(b.segments[0].x, b.segments[0].y);
+  for(let i=1;i<b.segments.length;i++){
+    ctx.lineTo(b.segments[i].x, b.segments[i].y);
+  }
+  ctx.stroke();
+}
+
+function updateBolt(b){
+  const last = b.segments[b.segments.length-1];
+  if(last.y < b.length){
+    const nextX = last.x + (Math.random()*30-15);
+    const nextY = last.y + Math.random()*30;
+    b.segments.push({x:nextX,y:nextY});
+    if(Math.random()<0.2 && b.segments.length>3){
+      createBolt(last.x,last.y,last.length-last.y,b.thickness/2);
+    }
+  } else {
+    b.alpha -= 0.05;
+  }
+}
+
+function drawLightning(){
+  ctx.fillStyle="rgba(0,0,0,0.05)";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  for(let i=bolts.length-1;i>=0;i--){
+    const b=bolts[i];
+    updateBolt(b);
+    drawBolt(b);
+    if(b.alpha<=0) bolts.splice(i,1);
+  }
+
+  if(Math.random()<0.02){
+    createBolt(Math.random()*canvas.width,0,canvas.height,2+Math.random()*2);
+  }
+
+  requestAnimationFrame(drawLightning);
+}
+
+drawLightning();
+
+window.addEventListener('resize', ()=>{
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+</script>
+
+</body>
+</html>
