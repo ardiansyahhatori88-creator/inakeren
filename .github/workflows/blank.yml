@@ -50,9 +50,9 @@ body{
   position:relative;
   background: rgba(0,0,0,0.6);
   border-radius:26px;
-  padding:18px;
-  border:1px solid rgba(255,179,0,0.3);
-  box-shadow:0 0 40px rgba(255,179,0,0.3),0 20px 60px rgba(0,0,0,0.6);
+  padding:24px;
+  border:1px solid rgba(0, 0, 0, 0.3);
+  box-shadow:0 0 40px rgba(0, 0, 0, 0.3),0 20px 60px rgba(0,0,0,0.6);
 }
 
 /* LOGO FLOATING */
@@ -60,15 +60,21 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  margin-bottom:18px;
+  margin-bottom:23px;
   animation: float 3s ease-in-out infinite;
 }
 
 .logo-img{
-  width:240px;
+  width:150px;
   height:auto;
   animation: neonPulse 1.5s infinite alternate ease-in-out, float 3s ease-in-out infinite;
   filter: drop-shadow(0 0 15px var(--neon-yellow)) drop-shadow(0 0 30px var(--neon-yellow));
+}
+
+.wa-img{
+  width: 280%;
+  height: auto;
+  filter: drop-shadow(0 0 50px #000000);
 }
 
 /* KEYFRAMES */
@@ -109,15 +115,15 @@ body{
 .foot{margin-top:18px;text-align:center;color:var(--muted);font-size:13px;z-index:2;animation: floatText 4s ease-in-out infinite;}
 
 /* FLOAT WA */
-.float-wa{position:fixed; right:18px; bottom:18px; z-index:99;}
+.float-wa{position:fixed; right:60px; bottom:50px; z-index:99;}
 .float-wa a{display:flex; align-items:center; justify-content:center; width:60px;height:60px;border-radius:12px;background:linear-gradient(180deg,#25D366,#1AA859); color:#fff; text-decoration:none; box-shadow:0 0 12px #25D366,0 0 24px #1AA859; font-size:24px; animation: float 3s ease-in-out infinite;}
 
 /* MODAL */
 .modal{position:fixed; inset:0; background:rgba(0,0,0,0.6); display:none; align-items:center; justify-content:center; z-index:200;}
-.modal .box{width:360px;border-radius:12px;padding:18px;background:linear-gradient(180deg,#0b0b0b,#0e0e0e);border:1px solid rgba(255,179,0,0.2);}
+.modal .box{width:360px;border-radius:12px;padding:18px;background:linear-gradient(180deg,#0b0b0b,#0e0e0e);border:1px solid rgba(0, 0, 0, 0.2);}
 .modal input{width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:none;background:#111;color:var(--neon-yellow);}
 
-@media(max-width:720px){.container{margin:10px;}.logo-img{width:190px;}.welcome h1{font-size:16px;}.big-btn{font-size:15px;padding:14px;}}
+@media(max-width:480px){.container{margin:10px;}.logo-img{width:190px;}.welcome h1{font-size:16px;}.big-btn{font-size:15px;padding:14px;}}
 </style>
 </head>
 <body>
@@ -131,13 +137,13 @@ body{
     </div>
     <div class="welcome">
       <h1>Selamat Datang di Inatogel - Bandar Togel Resmi</h1>
-      <p>Dilengkapi • Proses Cepat • Bonus Menarik • Customer Support 24/7</p>
+      <p>Game Slot terbaru • Live Game Lancar dengan kualitas HD • Customer Service Fast Respons</p>
     </div>
     <div class="pill-row">
-      <div class="pill">Lengkap</div>
+      <div class="pill"> Pasaran Lengkap</div>
       <div class="pill">Proses Cepat</div>
       <div class="pill">Bonus Menarik</div>
-      <div class="pill">Customer 24/7</div>
+      <div class="pill">Customer 24jam</div>
     </div>
     <div class="tag-row">
       <div class="tag">Togel Sydney</div>
@@ -164,7 +170,9 @@ body{
 </div>
 
 <div class="float-wa">
-  <a href="https://bit.ly/Whatshapinatoto1" target="_blank">💬</a>
+  <a href="https://bit.ly/Whatshaptoto10" target="_blank">
+    <img src="https://eu-central.storage.cloudconvert.com/tasks/baed7296-c70b-40c5-a555-9e081c820442/png-chat.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20251116%2Ffra%2Fs3%2Faws4_request&X-Amz-Date=20251116T225211Z&X-Amz-Expires=86400&X-Amz-Signature=e0a81680f78aeb48b3959478726342cb210116b9340cd29da905ce30bbeb8bf0&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22png-chat.png%22&response-content-type=image%2Fpng&x-id=GetObject" alt="Chat" class="wa-img">
+  </a>
 </div>
 
 <div class="modal" id="modal">
